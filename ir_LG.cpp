@@ -19,7 +19,6 @@
 #define LG_RPT_LENGTH 60000
 
 //+=============================================================================
-#if DECODE_LG
 bool  IRrecv::decodeLG (decode_results *results)
 {
     long  data   = 0;
@@ -50,10 +49,8 @@ bool  IRrecv::decodeLG (decode_results *results)
     results->decode_type = LG;
     return true;
 }
-#endif
 
 //+=============================================================================
-#if SEND_LG
 void  IRsend::sendLG (unsigned long data,  int nbits)
 {
     // Set IR carrier frequency
@@ -76,5 +73,4 @@ void  IRsend::sendLG (unsigned long data,  int nbits)
     }
     space(0);  // Always end with the LED off
 }
-#endif
 
